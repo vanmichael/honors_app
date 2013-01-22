@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Babson Honors Program Faculty Recommendation Request for <%= @user.first_name + " " + @user.last_name %></h1>
+    <p>
+      If you do not already have one, please create a new account and fill out a faculty recommendation for <%= @user.first_name + " " + @user.last_name %>
+    </p>
+
+    <p>
+      <%= @user.first_name + " " + @user.last_name %> user-id: <%= @user.id %>
+    </p>
+
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for participating and have a great day!</p> 
+  </body>
+</html>

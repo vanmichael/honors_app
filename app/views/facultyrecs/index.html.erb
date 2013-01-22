@@ -1,0 +1,12 @@
+<% provide(:title, 'All Recommendations') %>
+<h1>All Recommendations Submitted</h1>
+
+<section>
+<%= will_paginate %>
+
+<ul class="users"> <!-- this will change when you figure out css structure -->
+	<%= render @facultyrecs %> 
+</ul>
+
+<%= will_paginate %>
+</section>

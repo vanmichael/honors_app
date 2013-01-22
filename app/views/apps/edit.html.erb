@@ -1,0 +1,88 @@
+<h1>Edit Honors Applicant Form</h1>
+
+<p><h3> Student Name: <%= @user.first_name + " " + @user.last_name %> </h3></p>
+
+<h4>Instructions:</h4>
+
+<p>Completed applications must be posted no later than February 8th, 2012. Late Application will not be considered.</p>
+
+<p>Part of the application is a reference from a professor who had you in class in the fall semester and who can speak to your academic abilities. Once you have submitted your application, the professor that you have designated will recieve a reference from directly from the Honors Program. Please be sure to ask your chosen faculty memeber if they are willing to write a reference for you before listing that person's name on your application.</p>
+
+<p>Students will be selected for the program on the basis of thier academic record, essays, writing sample, reference, and, in the second round, an interview.
+</p>
+
+<p>Students will be notified by February 22 whether they will be moving on to the next step in the application process. Those students who are still being considered will be interviewed between February 27 and March 9 by two faculty members of the Honors Council.</p>
+
+<p>To complete the application, you will need the following documents.</p>
+
+<p>(a) A writing sample. This should be an essay you have written for any of the classes that you have taken at Babson that you believe is an excellent repreentation of your written communication skills. The document should not exceed 5 pages and can be a PDF file or a Word file. If your best writing sample is longer than 5 pages, please select a 5-page section from this paper as your writing sample.</p>
+
+<p>(b) An unofficial copy of your transcript (to-date) obtained from the registrars office (electronically). This is typically a PDF file.</p>
+
+<p>In addition, you will be asked to respond to the following questions. Your responses for each question should be no more than a paragrapgh.</p>
+
+<p>1. What interests you about the Babson Honors Program and what are your expectations if you participate?</p>
+<p>2. Write about an intellectual experience, project, or book that has influenced you and inspired you to learn more about that topic.</p>
+<p>3. French novelist Anatole France wrote: "An education isn't how much you have commited to memory, or even how much you know. It's being able to differentiate between what you do know and what you don't." What don't you know that you would like to know?</p>
+
+<p>4. Imagine that you are on a committee choosing from among a group of very well-qualified applicants for an Honors Program. Aside from excellent academic performance, what ONE characteristic would be most important to you in making your decision? Why?</p>
+
+<p>If you have the above documents and the name of the faculty memeber that is willing to act as as your reference, you are already to begin. If not, please close this page and return to it when you have all of the above information.</p>
+
+<p>Good luck and best wishes.</p>
+
+<%= form_for(@app) do |f| %>
+
+<div>
+	<%= f.label :agree, "I have read the instructions above and I have the materials I need to complete the application" %>
+
+	<%= f.radio_button :agree, "true" %>
+</div>
+
+<p>
+	<h4>Application Details</h4>
+</p>
+
+	<%= f.hidden_field :applicant_name, :value => @user.first_name + " " + @user.last_name %>
+	
+	<%= f.hidden_field :user_id, :value => @user.id %>
+
+	<%= f.label :year_of_grad, "Year of Graduation" %>
+	<%= f.text_field :year_of_grad %>
+
+	<%= f.label :boxnumber, "Campus Box #" %>
+	<%= f.text_field :boxnumber %>
+
+	<%= f.label :facultyreference, "I have requested a faculty reference from (please provide the Professor's name here):" %>
+	<%= f.text_field :facultyreference %>
+
+	<%= f.label :faculty_email, "Please Enter Faculty Email Below" %>
+	<%= f.text_field :faculty_email %>
+
+	<h4>Four Questions</h4>
+
+	<%= f.label :q1, "What interest you about the Babson Honors Program and what are your expectations if you participate? Please respond with a paragraph." %>
+	<%= f.text_area :q1, :cols => "30", :rows => "10" %>
+
+	<%= f.label :q2, "Write about an intellectual experience, project, or book that has influenced you and inspired you to learn more about that topic. Please respond with a paragraph." %>
+	<%= f.text_area :q2, :cols => "30", :rows => "10" %>
+
+	<%= f.label :q3, "French novelist Anatole France wrote: An education isn't how much you have commited to memory, or even how much you know. It is being able to differentiate between what you do know and what you dont. -What dont you know that you'd like to know? Please respond with a paragraph." %>
+	<%= f.text_area :q3, :cols => "30", :rows => "10" %>
+
+	<%= f.label :q4, "Imagine that you are on a committee choosing from among a group of very well-qualified applicants for an Honors Program. Aside from excellent academic performance, what one charateristic would be most important to you in making you decision? Why? Please respond with a paragraph." %>
+	<%= f.text_area :q4, :cols => "30", :rows => "10" %>
+
+	<h4>Application Materials</h4>
+
+	<p>If You Submit New Changes Please Re-Upload your Application Materials!</p>
+
+	<%= f.label :essay, "Please upload your writing sample here." %>
+	<%= f.file_field :essay %>
+
+	<%= f.label :transcript, "Please upload an unofficial copy of your transcript here." %>
+	<%= f.file_field :transcript %>
+
+	<%= f.submit "Save Changes", class: "btn btn-large btn-primary" %>
+
+<% end %>

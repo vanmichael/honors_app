@@ -1,0 +1,32 @@
+<h1>Babson Honors Program</h1>
+
+<div class="center">
+	<%= image_tag("babson college seal.png") %>
+</div>
+
+<table class="table">
+	<tr>
+		<th><%= link_to "Honors Program Application", new_user_path %></th>
+	</tr>
+	<tr>
+		<th><%= link_to "Honors Faculty Recomendation", new_user_path %></th>
+	</tr>
+	<tr>
+		<th><%= link_to "Honors Program Committee Member Evaluation", new_user_path %> </th>
+	</tr>
+	<tr>
+		<th><%= link_to "Create New User", signup_path, class: "btn btn-large btn-primary" %></th>
+	</tr>
+</table>
+
+<% if signed_in? %>
+	<div class="row">
+		<table class="table">
+			<tr>
+				<td>
+		<%= link_to "Your User Information", current_user, class: "btn btn-large btn-primary"%>
+				</td>
+			</tr>
+		</table>
+	</div>
+<% end %>

@@ -1,0 +1,17 @@
+
+<li>
+  <table class="table table-bordered">
+    <tr>
+      <th>Applicant Name:</th>
+      <th>Created At:</th>
+    </tr>
+    <tr>
+      <td><%= link_to facultyrec.applicant_name, facultyrec %></td>
+      <td>Posted <%= time_ago_in_words(facultyrec.created_at) %> ago</td>
+  </tr>
+  </table>
+</li>
+
+
+
+

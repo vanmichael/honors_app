@@ -1,0 +1,106 @@
+<h1> Honors Faculty Recomendation Form </h1>
+
+<p>
+	This is a recommendation for an applicant to the Honors Program to be filled out by a faculty member. You have received the invitation to fill out this recommendation because an applicant has requested you to support his/her application. If you have not been contacted by a student regarding his/her application to the Honors Program or if you believe you have received this due to an error, please contact the Associate Director of the Honors Program, Emily Marks (emarks@babson.edu) right away.
+
+This recommendation is due by no later than February 15th, 2012. Please help us by submitting this reference on time. 
+
+All applicants to the Honors Program have at least a 3.3 GPA and so we need your help in making fine distinctions among many well qualified applicants. Your input helps ensure that the most deserving students are accepted into this very competitive program. We greatly value your thoughts and sincerely thank you for your time.
+</p>
+
+<%= form_for(@facultyrec) do |f| %>
+
+	<%= f.hidden_field :user_id, :value => @user.id %>
+
+	<%= f.label :app_id, "Application_id of Student That can be found in your Email next to user id:" %>
+	<%= f.text_field :app_id %>
+
+	<%= f.label :faculty_name, 'Your Name' %>
+	<%= f.text_field :faculty_name %>
+
+	<%= f.label :title, 'Title at Babson' %>
+	<%= f.text_field :title %>
+
+	<%= f.label 'Honors Program Applicants name' %>
+	<%= f.text_field :applicant_name %>
+
+	<%= f.label :courses, 'What course(s) did the applicant (student) take with you? Please provide the course title and use a separate line for each course.' %>
+	<%= f.text_area :courses %>
+
+	<%= f.label :q1, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's academic ability relative to other high achieving students you have taught?" %>
+
+<div class = "form_row">
+	1 &nbsp; 2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q1, "1" %>
+	<%= f.radio_button :q1, "2" %>
+	<%= f.radio_button :q1, "3" %>
+	<%= f.radio_button :q1, "4" %>
+	<%= f.radio_button :q1, "5" %>
+</div>
+
+	<%= f.label :q1_com, "In a sentence or two, please explain your reasons for your response regarding the applicant's academic ability." %>
+	<%= f.text_area :q1_com %>
+
+	<%= f.label :q2, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's intellectual engagement relative to other high achieving students ?" %>
+
+<div class = "form_row">
+	1 &nbsp; 2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q2, "1" %>
+	<%= f.radio_button :q2, "2" %>
+	<%= f.radio_button :q2, "3" %>
+	<%= f.radio_button :q2, "4" %>
+	<%= f.radio_button :q2, "5" %>
+</div>
+
+	<%= f.label :q2_com, "In a sentence or two, please explain your reasons for your response regarding the applicant's intellectual engagement." %>
+	<%= f.text_area :q2_com %>
+
+	<%= f.label :q3, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?" %>
+
+<div class = "form_row">
+	1 &nbsp; 2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q3, "1" %>
+	<%= f.radio_button :q3, "2" %>
+	<%= f.radio_button :q3, "3" %>
+	<%= f.radio_button :q3, "4" %>
+	<%= f.radio_button :q3, "5" %>
+</div>
+
+	<%= f.label :q3_com, "In a sentence or two, please explain your reasons for your response regarding the applicant's potential for independent research." %>
+	<%= f.text_area :q3_com %>
+
+
+	<%= f.label :q4, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?" %>
+
+<div class = "form_row">
+	1 &nbsp; 2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q4, "1" %>
+	<%= f.radio_button :q4, "2" %>
+	<%= f.radio_button :q4, "3" %>
+	<%= f.radio_button :q4, "4" %>
+	<%= f.radio_button :q4, "5" %>
+</div>
+
+	<%= f.label :q4_com, "On a scale of 1(Poor) to 5 (Exceptional), please rate the applicant's writing ability." %>
+	<%= f.text_area :q4_com %>
+
+	<%= f.label :q5_com, "What personal attributes indicate this applicant's capacity to be an engaged scholar and a collegial member of the Honors Program community." %>
+	<%= f.text_area :q5_com %>
+
+	<%= f.label :q6_com, "Please provide any other information that you would like the Honors Council to know about this student." %>
+	<%= f.text_area :q6_com %>
+
+	<%= f.submit "Submit Recomendation", class: "btn btn-large btn-primary" %>
+
+<% end %>
+
+
+

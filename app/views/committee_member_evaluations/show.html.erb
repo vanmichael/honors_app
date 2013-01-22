@@ -1,0 +1,78 @@
+<h1> Committee Member Evaluation Form </h1>
+
+<div>
+
+<table class="table">
+	<tr>
+		<th>Member Name</th>
+		<th>Student Name</th>
+		<th>Application ID </th>
+	</tr>
+	<tr>
+		<td>
+	<%= @evaluation.name %>
+		</td>
+		<td>
+	<%= @evaluation.applicant_name %>
+		</td>
+		<td>
+	<%= @evaluation.app_id %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 1 </td>
+		<td colspan="3">
+	<%= @evaluation.q1 %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 1 </td>
+		<td colspan="3">
+	<%= @evaluation.q1_com %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 2 </td>
+		<td colspan="3">
+	<%= @evaluation.q2 %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 3 </td>
+		<td colspan="3">
+	<%= @evaluation.q3 %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 2 and 3 </td>
+		<td colspan="3">
+	<%= @evaluation.q2_q3_com %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 4 </td>
+		<td colspan="3">
+	<%= @evaluation.q4 %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 5 </td>
+		<td colspan="3">
+	<%= @evaluation.q5_com %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 6 </td>
+		<td colspan="3">
+	<%= @evaluation.q6_com %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 7 </td>
+		<td colspan="3">
+	<%= @evaluation.q7 %>
+		</td>
+	</tr>
+ </table>
+
+</div>

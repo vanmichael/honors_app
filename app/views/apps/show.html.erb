@@ -1,0 +1,59 @@
+<h3> Your Student Honor's Program Application </h3>
+
+<p>
+<h4><%= link_to "Make Changes", edit_app_path %></h4>
+</p>
+
+<div>
+
+<table class="table">
+	<tr>
+		<th>Student Name:</th>
+		<td><%= @app.applicant_name %></td>
+	</tr>
+	<tr>
+		<th>Year of Graduation:</th>
+		<td> <%= @app.year_of_grad %></td>
+	</tr>
+
+	<tr>
+		<th>Faculty Member Email:</th>
+		<td> <%= @app.faculty_email %> </td>
+	</tr>
+
+	<tr>
+		<td> Question 1: </td>
+		<td colspan="2">
+	<%= @app.q1 %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 2: </td>
+		<td colspan="2">
+	<%= @app.q2 %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 3: </td>
+		<td colspan="2">
+	<%= @app.q3 %>
+		</td>
+	</tr>
+	<tr>
+		<td> Question 4: </td>
+		<td colspan="2">
+	<%= @app.q4 %>
+		</td>
+	</tr>
+	<tr>
+		<td> Student Writing Sample:</td>
+		<td> <%= image_tag @app.essay_url.to_s %></td>
+	</tr>
+	<tr>
+		<td> Student Writing Sample:</td>
+		<td> <%= image_tag @app.transcript_url.to_s %></td>
+	</tr>
+	
+ </table>
+
+</div>

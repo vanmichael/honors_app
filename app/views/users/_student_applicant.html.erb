@@ -1,0 +1,20 @@
+<li>
+	<table class="table table-bordered">
+	<tr>
+		<th>Name:</th>
+		<th>User Type:</th>
+		<th>Account:</th>
+	</tr>
+	<tr>
+	<th><%= link_to user.first_name + " " + user.last_name, user %></th>
+	<td>
+    <h4>Student Applicant</h4>
+    </td>
+   	<td>
+	<% if current_user.admin? && !current_user?(user) %>
+		| <%= link_to "delete", user, method: :delete, confirm: "You sure?" %>
+	<% end %>
+    </td>
+    </tr>
+    </table>
+</li>

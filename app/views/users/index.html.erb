@@ -1,0 +1,28 @@
+<% provide(:title, 'All users') %>
+
+<% if current_user.admin? %>
+<h1>All Users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+	<%= render @users %>
+</ul>
+
+<%= will_paginate %>
+
+<% elsif current_user.user_type == 3 %>
+
+<%= will_paginate %>
+
+<ul class="users">
+	<%= render @student_applicants %>
+</ul>
+
+<%= will_paginate %>
+
+<% else %>
+
+<h1> Sorry but you are not authorized to view this page!</h1>
+
+<% end %>

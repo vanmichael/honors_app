@@ -1,0 +1,100 @@
+<h1>New Committee Member Evaluations</h1>
+
+<p>This is the evaluation form to be used ONLY by the members of the Honors Council. If you received this link in error, please do not fill out the form and contact Emily Marks (emarks@babson.edu) as soon as possible.</p>
+
+<%= form_for(@evaluation) do |f| %>
+
+	<%= f.hidden_field :user_id, :value => @user %>
+
+	<%= f.label :name, "Please enter YOUR NAME (the evaluator) below to begin the evaluation." %>
+	<%= f.text_field :name %>
+
+	<%= f.label :app_id, "Application ID" %>
+	<%= f.text_field :app_id %>
+
+	<%= f.label :applicant_name, "Please enter the name of the applicant you are evaluating for admission to the Honors Program" %>
+	<%= f.text_field :applicant_name %>
+
+	<%= f.label :q1, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's academic ability relative to other high achieving students you have taught?" %>
+
+<div class = "form_row">
+	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q1, "1" %>
+	<%= f.radio_button :q1, "2" %>
+	<%= f.radio_button :q1, "3" %>
+	<%= f.radio_button :q1, "4" %>
+	<%= f.radio_button :q1, "5" %>
+</div>
+
+	<%= f.label :q1_com, "In a sentence or two, please explain your reasons for your response regarding the applicant's academic ability." %>
+	<%= f.text_area :q1_com %>
+
+	<%= f.label :q2, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's intellectual engagement relative to other high achieving students ?" %>
+
+<div class = "form_row">
+	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q2, "1" %>
+	<%= f.radio_button :q2, "2" %>
+	<%= f.radio_button :q2, "3" %>
+	<%= f.radio_button :q2, "4" %>
+	<%= f.radio_button :q2, "5" %>
+</div>
+
+	<%= f.label :q3, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?" %>
+
+<div class = "form_row">
+	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q3, "1" %>
+	<%= f.radio_button :q3, "2" %>
+	<%= f.radio_button :q3, "3" %>
+	<%= f.radio_button :q3, "4" %>
+	<%= f.radio_button :q3, "5" %>
+</div>
+
+	<%= f.label :q2_q3_com, "In a sentence or two, please explain your reasons for your response regarding the applicant's potential for independent research." %>
+	<%= f.text_area :q2_q3_com %>
+
+
+	<%= f.label :q4, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?" %>
+
+<div class = "form_row">
+	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q4, "1" %>
+	<%= f.radio_button :q4, "2" %>
+	<%= f.radio_button :q4, "3" %>
+	<%= f.radio_button :q4, "4" %>
+	<%= f.radio_button :q4, "5" %>
+</div>
+
+	<%= f.label :q5_com, "What personal attributes indicate this applicant's capacity to be an engaged scholar and a collegial member of the Honors Program community." %>
+	<%= f.text_area :q5_com %>
+
+	<%= f.label :q6_com, "Please provide any other information that you would like the Honors Council to know about this student." %>
+	<%= f.text_area :q6_com %>
+
+<%= f.label :q7, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?" %>
+
+<div class = "form_row">
+	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+</div>
+<div class="form_row" >
+	<%= f.radio_button :q7, "1" %>
+	<%= f.radio_button :q7, "2" %>
+	<%= f.radio_button :q7, "3" %>
+	<%= f.radio_button :q7, "4" %>
+	<%= f.radio_button :q7, "5" %>
+</div>
+
+	<%= f.submit "Submit Evaluation", class: "btn btn-large btn-primary" %>
+
+<% end %>
+
+
