@@ -21,6 +21,8 @@ HonorsApp::Application.configure do
   config.assets.digest = true
 
   #gmail configuration
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = true
   #GMAIL SMTP Settings:
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
