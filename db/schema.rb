@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122172806) do
+ActiveRecord::Schema.define(:version => 20130123051147) do
 
   create_table "apps", :force => true do |t|
     t.integer "user_id"
@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(:version => 20130122172806) do
     t.integer "year_of_grad"
     t.integer "boxnumber"
     t.string  "facultyreference"
-    t.string  "q1"
-    t.string  "q2"
-    t.string  "q3"
-    t.string  "q4"
+    t.text    "q1"
+    t.text    "q2"
+    t.text    "q3"
+    t.text    "q4"
     t.string  "agree"
     t.string  "essay"
     t.string  "transcript"
@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(:version => 20130122172806) do
     t.string   "name"
     t.string   "applicant_name"
     t.integer  "q1"
-    t.string   "q1_com"
+    t.text     "q1_com"
     t.integer  "q2"
     t.integer  "q3"
-    t.string   "q2_q3_com"
+    t.text     "q2_q3_com"
     t.string   "q4"
-    t.string   "q5_com"
-    t.string   "q6_com"
+    t.text     "q5_com"
+    t.text     "q6_com"
     t.integer  "q7"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
@@ -58,15 +58,15 @@ ActiveRecord::Schema.define(:version => 20130122172806) do
     t.string   "title"
     t.string   "courses"
     t.string   "q1"
-    t.string   "q1_com"
+    t.text     "q1_com"
     t.string   "q2"
-    t.string   "q2_com"
+    t.text     "q2_com"
     t.string   "q3"
-    t.string   "q3_com"
+    t.text     "q3_com"
     t.string   "q4"
-    t.string   "q4_com"
-    t.string   "q5_com"
-    t.string   "q6_com"
+    t.text     "q4_com"
+    t.text     "q5_com"
+    t.text     "q6_com"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
