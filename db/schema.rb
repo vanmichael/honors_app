@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123051147) do
+ActiveRecord::Schema.define(:version => 20130125013044) do
 
   create_table "apps", :force => true do |t|
     t.integer "user_id"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20130123051147) do
     t.integer  "app_id"
     t.string   "applicant_name"
     t.string   "title"
-    t.string   "courses"
+    t.text     "courses"
     t.string   "q1"
     t.text     "q1_com"
     t.string   "q2"
