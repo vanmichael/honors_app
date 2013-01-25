@@ -38,6 +38,7 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     @app = App.find_by_user_id(@user)
     @facultyrec = Facultyrec.find_by_app_id(@user)
+    @committee_member_evaluation = CommitteeMemberEvaluation.find_by_app_id(@user)
   end
 
   def edit

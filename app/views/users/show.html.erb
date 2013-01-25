@@ -88,19 +88,23 @@
 		<%= link_to "Your completed Evaluations", committee_member_evaluations_path %>
 		</p>
 
-		<section>
-			<h1> Applicant User Summary </h1>
-			<p>
-		     <%= link_to "Applicant's Completed Application Form", @app %>
-		    </p>
-			<p>
-		    <%= link_to "Applicant's Completed Faculty Recomendation", @facultyrec %>
-		    </p>
-		    <p>
-		    <%= link_to "Create an evaluation for this student",new_committee_member_evaluation_path(@user) %>
-		    </p>
-
-		</section>
+			<% if @user.user_type == 1 %>
+			<section>
+				<h1> Applicant User Summary </h1>
+				<p>
+			     <%= link_to "Applicant's Completed Application Form", @app %>
+			    </p>
+				<p>
+			    <%= link_to "Applicant's Completed Faculty Recomendation", @facultyrec %>
+			    </p>
+			    <p>
+			    <%= link_to "Applicant's Committee Member Evaluation", @committee_member_evaluation %>
+			    </p>
+			    <p>
+			    <%= link_to "Create an evaluation for this student",new_committee_member_evaluation_path(@user) %>
+			    </p>
+			</section>
+			<% end %>
 		<% end %>
 	</aside>
 </div>

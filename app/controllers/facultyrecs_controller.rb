@@ -1,7 +1,6 @@
 class FacultyrecsController < ApplicationController
 
 	def index
-
 		@facultyrecs = Facultyrec.paginate(:conditions => {:user_id => current_user.id.to_s }, :page => params[:page], :order => 'created_at desc')
 	end
 
