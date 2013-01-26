@@ -90,7 +90,16 @@ All applicants to the Honors Program have at least a 3.3 GPA and so we need your
 </div>
 
 	<%= f.label :q4_com, "On a scale of 1(Poor) to 5 (Exceptional), please rate the applicant's writing ability." %>
-	<%= f.text_area :q4_com %>
+	<div class = "form_row">
+	1 &nbsp; 2 &nbsp;3 &nbsp;4 &nbsp;5
+	</div>
+	<div class="form_row" >
+	<%= f.radio_button :q4_com, "1" %>
+	<%= f.radio_button :q4_com, "2" %>
+	<%= f.radio_button :q4_com, "3" %>
+	<%= f.radio_button :q4_com, "4" %>
+	<%= f.radio_button :q4_com, "5" %>
+	</div>
 
 	<%= f.label :q5_com, "What personal attributes indicate this applicant's capacity to be an engaged scholar and a collegial member of the Honors Program community." %>
 	<%= f.text_area :q5_com %>
