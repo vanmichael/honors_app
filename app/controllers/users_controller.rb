@@ -9,29 +9,37 @@ class UsersController < ApplicationController
   end
 
   def new
-  	@user = User.new
+    @user = User.new
+  end
+
+  def new_faculty_user
+    @user = User.new
+  end
+
+   def new_committee_user
+    @user = User.new
   end
 
   def create
-  	@user = User.new(params[:user])
-  	if @user.save
-       UserMailer.welcome_email(@user).deliver
+    @user = User.new(params[:user])
+    if @user.save
+       #UserMailer.welcome_email(@user).deliver
        sign_in @user
        if @user.user_type == 1
        flash[:success] = "Student Applicant User Account Created"
        redirect_to new_app_path(@user)
        end
        if @user.user_type == 2
-  		 flash[:success] = "Faculty User Account Created"
-  		 redirect_to new_facultyrec_path(@user)
+       flash[:success] = "Faculty User Account Created"
+       redirect_to new_facultyrec_path(@user)
        end
        if @user.user_type == 3
        flash[:success] = "Committee Member User Account Created"
        redirect_to new_committee_member_evaluation_path(@user)
        end 
     else
-  		render 'new'
-  	end
+      render root_path
+    end
   end
 
   def show

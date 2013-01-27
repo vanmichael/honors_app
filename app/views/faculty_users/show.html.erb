@@ -1,0 +1,110 @@
+<% provide(:title, full_name(@user.first_name, @user.last_name)) %>
+
+<div class="row">
+	<%-# User Profile Picture -%>
+	<aside class="span2">
+		<%= image_tag @user.avatar_url.to_s, :id => 'profile' %>
+	</aside>
+	<%-# User contact Information-%>
+	<aside class="span4">
+		<section>
+			<p>
+			<h1>
+				<%= full_name(@user.first_name, @user.last_name) %>
+			</h1>
+		    </p>
+
+			<h4>
+				Email: <%= @user.email %>
+			</h4>
+
+			<p>
+			<h4>
+				Cell Phone: <%= @user.cellphone %>
+			</h4>
+		    </p>
+		    <p>
+		    <h4>
+				<%= link_to "Update Profile", edit_user_path %>
+			</h4>
+		    </p>
+
+		</section>
+	</aside>
+
+	<aside class="span4">
+		<section>
+			<h1>
+				Your Completed Documents
+			</h1>
+		</section>
+
+		<%-# For Student User Accounts -%>
+
+		<% if current_user.user_type == 1 %>
+
+        <p>
+		<%= link_to "New completed Student Application Form", new_app_path(@user) %>
+		</p>
+
+		<p>
+		<%= link_to "Your completed Student Application Form", @app %>
+		</p>
+
+		<table class="table table-bordered">
+			<tr>
+				<th>Your Application Requirements:</th>
+				<th>Status:</th>
+			</tr>
+			<tr>
+				<th>Faculty Recomendation:</th>
+				<td>status</td>
+			</tr>
+			<tr>
+				<th>Committee Evaluation:</th>
+				<td>status</td>
+			</tr>
+		</table>
+		<% end %>
+
+		<%-# For Professor User Accounts -%>
+
+		<% if current_user.user_type == 2 %>
+
+		<p>
+		<%= link_to "New Faculty Rec Form", new_facultyrec_path(@user) %>
+		</p>
+
+		<p>
+		<%= link_to "Your completed Faculty Rec Forms", facultyrecs_path %>
+		</p>
+		<% end %>
+
+		<%-# For Committee Member User Accounts -%>
+
+		<% if current_user.user_type == 3 %>
+
+		<p>
+		<%= link_to "Your completed Evaluations", committee_member_evaluations_path %>
+		</p>
+
+			<% if @user.user_type == 1 %>
+			<section>
+				<h1> Applicant User Summary </h1>
+				<p>
+			     <%= link_to "Applicant's Completed Application Form", @app %>
+			    </p>
+				<p>
+			    <%= link_to "Applicant's Completed Faculty Recomendations", @facultyrec %>
+			    </p>
+			    <p>
+			    <%= link_to "Applicant's Committee Member Evaluations", @committee_member_evaluation %>
+			    </p>
+			    <p>
+			    <%= link_to "Create an evaluation for this student",new_committee_member_evaluation_path(@user) %>
+			    </p>
+			</section>
+			<% end %>
+		<% end %>
+	</aside>
+</div>

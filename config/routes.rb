@@ -2,11 +2,19 @@ HonorsApp::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-  resources :users
+  resources :users do
+    collection do
+      get :new_faculty_user
+      get :new_committee_user
+    end
+  end
+    
   resources :sessions, only: [:new, :create, :destroy]
   resources :apps
   resources :facultyrecs
   resources :committee_member_evaluations
+
+  #Custom Routes for User Accounts
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'

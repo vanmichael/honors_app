@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<h1>Student Sign up</h1>
+<h1>Committee Member Sign up</h1>
 
 <div class="row">
 	<div class="span6 offset3">
@@ -24,7 +24,7 @@
 
 	<%= f.label :user_type %>
 	<%= f.select(:user_type, options_for_select([
-								['Student Applicant', '1']
+								['Committee Member', '3']
 								])) %>
 	<%# This is a hidden field for Student Type Account 1 %>
 	<%# f.hidden_field :user_type %>

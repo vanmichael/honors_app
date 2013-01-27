@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<h1>Student Sign up</h1>
+<h1>Faculty Sign up</h1>
 
 <div class="row">
 	<div class="span6 offset3">
@@ -22,12 +22,11 @@
 	<%= f.label :password_confirmation, "Confirmation" %>
 	<%= f.password_field :password_confirmation %>
 
+	<%# This is a hidden field for Student Type Account 1 %>
 	<%= f.label :user_type %>
 	<%= f.select(:user_type, options_for_select([
-								['Student Applicant', '1']
+								['Faculty Member', '2']
 								])) %>
-	<%# This is a hidden field for Student Type Account 1 %>
-	<%# f.hidden_field :user_type %>
 
 	<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
 <% end %>

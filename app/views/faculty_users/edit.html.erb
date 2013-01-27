@@ -1,9 +1,8 @@
-<% provide(:title, 'Sign up') %>
-<h1>Student Sign up</h1>
+<% provide(:title, 'Edit Profile') %>
+<h1>Sign up</h1>
 
 <div class="row">
 	<div class="span6 offset3">
-		
 	
 <%= form_for(@user) do |f| %>
 
@@ -24,12 +23,18 @@
 
 	<%= f.label :user_type %>
 	<%= f.select(:user_type, options_for_select([
-								['Student Applicant', '1']
+								['Student Applicant', '1'],
+								['Faculty Member', '2'],
+								['Committee Member', '3']
 								])) %>
-	<%# This is a hidden field for Student Type Account 1 %>
-	<%# f.hidden_field :user_type %>
 
-	<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+	<%= f.label :cellphone, "Cell Phone Number example: 123-456-7810" %>
+	<%= f.text_field :cellphone %>							
+
+  <%= f.label :avatar, "Upload a Profile Picture" %>
+  <%= f.file_field :avatar %>
+
+	<%= f.submit "Save Changes", class: "btn btn-large btn-primary" %>
 <% end %>
 	</div>
 </div>
