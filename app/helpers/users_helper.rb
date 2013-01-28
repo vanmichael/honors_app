@@ -141,4 +141,12 @@ module UsersHelper
 		end
 	end
 
+	def image_status(status)
+		if status == 'recieved'
+			image_tag("greencheck.jpg")
+		elsif status == 'incomplete'
+			image_tag("incomplete.png")
+		end
+	end
+
 end

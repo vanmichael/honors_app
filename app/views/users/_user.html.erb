@@ -1,8 +1,20 @@
 <li>
 	<table class="table table-bordered">
 	<tr>
+        <th rowspan="2" style="width:50px; height:30px;"><%= image_tag user.avatar_url.to_s, :id => 'profile' %></th>
 		<th>Name:</th>
 		<th>User Type:</th>
+        <th>
+            <% if user.user_type == 1 %>
+            <h5>Student Email: </h5>
+            <% end %>
+            <% if user.user_type == 2 %>
+            <h5>Faculty Email: </h5>
+            <% end %>
+            <% if user.user_type == 3 %>
+            <h5>Committee Email: </h5>
+             <% end %>
+        </th>
 		<th>Account:</th>
 	</tr>
 	<tr>
@@ -17,6 +29,9 @@
     <% if user.user_type == 3 %>
     <h4>Committee Member</h4>
     <% end %>
+    </td>
+    <td>
+        <%= user.email %>
     </td>
    	<td>
 	<% if current_user.admin? && !current_user?(user) %>

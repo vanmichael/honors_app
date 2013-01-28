@@ -17,7 +17,7 @@ class CommitteeMemberEvaluationsController < ApplicationController
 			redirect_to root_path
 		else
 			flash[:notice] = "Evaluation not saved!!"
-			redirect_to root_path
+			render 'new'
 		end
 	end
 

@@ -2,7 +2,7 @@
 	<tr>
 		<th>Application Requirements:</th>
 		<th>Users:</th>
-		<th>Status: (recieved or incomplete)</th>
+		<th colspan="2">Status: (recieved or incomplete)</th>
 		<% if current_user.user_type == 3 %>
 		<th>View Documents:</th>
 		<% end %>
@@ -11,6 +11,7 @@
 		<th>Honors Application:</th>
 		<td><%= honors_app_owner %></td>
 		<td><%= honors_app_status %></td>
+		<td style="text-align:center;"><%= image_status(honors_app_status) %></td>
 		<% if current_user.user_type == 3 %>
 		<td><%= link_to 'View Student Application', @app %></td>
 		<% end %>
@@ -19,6 +20,7 @@
 		<th>Faculty Recommendation:</th>
 		<td><%= faculty_rec_owner %></td>
 		<td><%= faculty_rec_status %></td>
+		<td style="text-align:center;"><%= image_status(faculty_rec_status) %></td>
 		<% if current_user.user_type == 3 %>
 		<td><%= view_faculty_rec %></td>
 		<% end %>
@@ -27,6 +29,7 @@
 		<th rowspan="2">Committee Evaluation:</th>
 		<td><%= committee_eval_one_owner %></td>
 		<td><%= committee_eval_one_status %></td>
+		<td style="text-align:center;"><%= image_status(committee_eval_one_status) %></td>
 		<% if current_user.user_type == 3 %>
 		<td><%= view_eval_one %></td>
 		<% end %>
@@ -34,6 +37,7 @@
 	<tr>
 		<td><%= committee_eval_two_owner %></td>
 		<td><%= committee_eval_two_status %></td>
+		<td style="text-align:center;"><%= image_status(committee_eval_two_status) %></td>
 		<% if current_user.user_type == 3 %>
 		<td><%= view_eval_two %></td>
 		<% end %>

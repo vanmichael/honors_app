@@ -15,6 +15,32 @@
 
 <%= will_paginate %>
 
+<h3>Student Applicants</h3>
+<ul class="users">
+	<%= render @student_applicants %>
+</ul>
+
+<%= will_paginate %>
+
+<h3>Faculty Members</h3>
+<ul class="users">
+	<%= render @faculty_members %>
+</ul>
+
+<%= will_paginate %>
+
+<h3>Committee Members</h3>
+<ul class="users">
+	<%= render @committee_members %>
+</ul>
+
+<%= will_paginate %>
+
+<% elsif current_user.user_type == 2 %>
+
+<%= will_paginate %>
+
+<h3>Student Applicants</h3>
 <ul class="users">
 	<%= render @student_applicants %>
 </ul>
@@ -23,6 +49,6 @@
 
 <% else %>
 
-<h1> Sorry but you are not authorized to view this page!</h1>
+<h1> Sorry, but you are not authorized to view this page!</h1>
 
 <% end %>
