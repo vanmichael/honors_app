@@ -2,37 +2,45 @@
 
 <table class="table table-bordered">
 	<tr>
-		<td>Links:</td>
+		<td style="height:100px;">Chrome and Firefox Compatibility only:</br></br> <%= image_tag("chrome.jpg")%>&nbsp; &nbsp; &nbsp; &nbsp;<%= image_tag("mozilla-firefox.jpg")%></td>
 		<td rowspan="5" style="text-align:center;"><%= image_tag("babson college seal.png") %></td>
-		<td>Content:</td>
+		<td style="height:20px; text-align:center;"><%= image_tag("babsonbeaver.png")%></td>
 	</tr>
 	<tr>
-		<td><%= link_to "Honors Program Application", new_user_path %></td>
+		<td>Links: Click Button Below To Apply!</td>
 		<td rowspan="4">
 			<object width="300" height="169"><param name="movie" value="http://www.youtube.com/v/2L_cGjQSR80?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/2L_cGjQSR80?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="300" height="169" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 		</td>
 	</tr>
 	<tr>
-		<td><%= link_to "Honors Faculty Recomendation", new_faculty_user_users_path %></td>
+		<td style="height:30px;"><%= link_to "Honors Program Application", new_user_path, class: "btn btn-success" %></td>
 	</tr>
 	<tr>
-		<td><%= link_to "Honors Program Committee Member Evaluation", new_committee_user_users_path, :anchor => "committee" %></td>
+		<td style="height:30px;"><%= link_to "Honors Faculty Recomendation", new_faculty_user_users_path %></td>
 	</tr>
 	<tr>
-		<td><%= link_to "Create New User", signup_path %></td>
+		<td style="height:30px;"><%= link_to "Honors Program Committee Member Evaluation", new_committee_user_users_path, :anchor => "committee" %></td>
 	</tr>
 	<tr>
-		<td colspan="3">Criteria to Apply
-Students who have earned a minimum GPA of 3.4 in their first semester are encouraged to apply during the spring semester of their first year. The Honors Council faculty selects students based on a wide variety of factors including academic performance, scholarly passions, writing ability, and an interview.
-Transfer students who are enrolled in at least their second semester at Babson and have at least a 3.4 Babson GPA may apply, provided they will be in residence at the Babson College campus for four contiguous semesters. 
-This is a student’s only opportunity to apply for admission to the Honors Program. The Honors Council considers each applicant’s academic record, letter of application, faculty recommendations, co-curricular involvement, and interview with Council members in deciding who will be admitted to the program. Space is limited and the process is competitive.
-In order to remain in the Honors Program, students are required to:
-Have a cumulative GPA of 3.4 or higher at the end of each academic year
-Attend the Sophomore City as Text Exploration and Cape Cod retreat
-Enroll in and pass Honors Seminars I and II
-Complete a Babson-approved, credit-bearing international study program
-Complete a two-semester Honors Project with a grade B+ or higher
-Remain in good disciplinary standing at the College </td>
+		<td colspan="3"><b>Criteria to Apply:</b> Students who have earned a minimum GPA of 3.4 in their first semester are encouraged to apply during the spring semester of their first year. The Honors Council faculty selects students based on a wide variety of factors including academic performance, scholarly passions, writing ability, and an interview. Transfer students who are enrolled in at least their second semester at Babson and have at least a 3.4 Babson GPA may apply, provided they will be in residence at the Babson College campus for four contiguous semesters. This is the student’s only opportunity to apply for admission to the Honors Program. The Honors Council considers each applicant’s academic record, letter of application, faculty recommendations, co-curricular involvement, and interview with Council members in deciding who will be admitted to the program. Space is limited and the process is competitive. </td>
+	</tr>
+	<tr>
+		<td colspan="3"><b><i>In order to remain in the Honors Program, students are required to:</i></b></td>
+	</tr>
+	<tr>
+		<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;• Have a cumulative GPA of 3.4 or higher at the end of each academic year. </td>
+	</tr>
+	<tr>
+		<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;• Attend the Sophomore City as Text Exploration and Cape Cod retreat.  </td>
+	</tr>
+	<tr>
+		<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;• Enroll in and pass Honors Seminars I and II Complete a Babson-approved, credit-bearing international study program. </td>
+	</tr>
+	<tr>
+		<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;• Complete a two-semester Honors Project with a grade B+ or higher. </td>
+	</tr>
+	<tr>
+		<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;• Remain in good disciplinary standing at the College. </td>
 	</tr>
 </table>
 
