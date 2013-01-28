@@ -11,7 +11,7 @@ class AppsController < ApplicationController
 	  	if @app.save
 	  		 @user = current_user
 	  		 @faculty_email = @app.faculty_email
-       		 #UserMailer.faculty_rec_email(@user, @faculty_email).deliver
+       		 UserMailer.faculty_rec_email(@user, @faculty_email).deliver
 	  		 flash[:success] = "Application Created"
 	  		 redirect_to root_path
 	  	else
@@ -21,6 +21,7 @@ class AppsController < ApplicationController
 
 	def show
 		@app = App.find(params[:id])
+		@user = User.find_by_id(@app.user_id)
 	end
 
 	def edit

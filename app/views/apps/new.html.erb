@@ -4,7 +4,7 @@
 
 <h4>Instructions:</h4>
 
-<p>Completed applications must be posted no later than February 8th, 2012. Late Application will not be considered.</p>
+<p>Completed applications must be posted no later than February 8th, 2013. Late Application will not be considered.</p>
 
 <p>Part of the application is a reference from a professor who had you in class in the fall semester and who can speak to your academic abilities. Once you have submitted your application, the professor that you have designated will recieve a reference from directly from the Honors Program. Please be sure to ask your chosen faculty memeber if they are willing to write a reference for you before listing that person's name on your application.</p>
 
@@ -33,11 +33,13 @@
 
 <%= form_for(@app) do |f| %>
 
-<div>
-	<%= f.label :agree, "I have read the instructions above and I have the materials I need to complete the application" %>
-
+	<p>
+	"I have read the instructions above and I have the materials I need to complete the application:"
+	</p>
+	<div class="span2">
+	<%= f.label :agree, "Click to agree:" %>
+	</div>
 	<%= f.radio_button :agree, "true" %>
-</div>
 
 <p>
 	<h4>Application Details</h4>
@@ -47,19 +49,33 @@
 	
 	<%= f.hidden_field :user_id, :value => @user.id %>
 
-	<%= f.label :year_of_grad, "Year of Graduation" %>
-	<%= f.text_field :year_of_grad %>
+<div class="row">
+	<div class="span3">
+		<%= f.label :year_of_grad, "Year of Graduation" %>
+		<%= f.text_field :year_of_grad, :placeholder => 'e.g. 2016' %>
+	</div>
 
-	<%= f.label :boxnumber, "Campus Box #" %>
-	<%= f.text_field :boxnumber %>
+	<div class="span4">
+		<%= f.label :facultyreference, "I have requested a faculty reference from:" %>
+		<%= f.text_field :facultyreference, :placeholder => "Ganeesan Shankar" %>
+	</div>
+</div>
 
-	<%= f.label :facultyreference, "I have requested a faculty reference from (please provide the Professor's name here):" %>
-	<%= f.text_field :facultyreference %>
+<div class="row">
+	<div class="span3">
+		<%= f.label :boxnumber, "Campus Box #" %>
+		<%= f.text_field :boxnumber, :placeholder => "2686" %>
+	</div>
 
+	<div class="span4">
 	<%= f.label :faculty_email, "Please Enter Faculty Email Below" %>
-	<%= f.text_field :faculty_email %>
+	<%= f.text_field :faculty_email, :placeholder => "gshankar@babson.edu" %>
+	</div>
+</div>
 
-	<h4>Four Questions</h4>
+</br>
+	<h4>Four Questions:</h4>
+</br>
 
 	<%= f.label :q1, "What interest you about the Babson Honors Program and what are your expectations if you participate? Please respond with a paragraph." %>
 	<%= f.text_area :q1, :cols => "30", :rows => "10" %>
@@ -84,3 +100,4 @@
 	<%= f.submit "Submit Application", class: "btn btn-large btn-primary" %>
 
 <% end %>
+

@@ -1,4 +1,4 @@
-<h3> Your Student Honor's Program Application </h3>
+<h3> Student: <%= full_name(@user.first_name, @user.last_name)%>'s Honor's Program Application </h3>
 
 <p>
 <h4><%= link_to "Make Changes", edit_app_path %></h4>
@@ -22,7 +22,7 @@
 	</tr>
 
 	<tr>
-		<td> Question 1: </td>
+		<td onclick="showQuestion()"> Question 1: </td>
 		<td colspan="2">
 	<%= @app.q1 %>
 		</td>

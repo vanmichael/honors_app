@@ -21,7 +21,7 @@ class FacultyrecsController < ApplicationController
 	end
 
 	def show
-	    @facultyrec = Facultyrec.find(params[:id])
+	    @facultyrec = Facultyrec.find(params[:id]) 
 	end
 
 

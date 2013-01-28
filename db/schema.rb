@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125064141) do
+ActiveRecord::Schema.define(:version => 20130127202611) do
 
   create_table "apps", :force => true do |t|
     t.integer "user_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130125064141) do
     t.string  "faculty_email"
     t.string  "faculty_rec_status"
     t.string  "committee_eval_status"
+    t.string  "status"
   end
 
   create_table "committee_member_evaluations", :force => true do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20130125064141) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "user_id"
+    t.string   "status"
   end
 
   create_table "facultyrecs", :force => true do |t|
@@ -69,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20130125064141) do
     t.text     "q6_com"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
   end
 
   create_table "users", :force => true do |t|

@@ -33,43 +33,34 @@
 	</aside>
 
 	<aside class="span4">
-		<section>
-			<h1>
-				Your Completed Documents
-			</h1>
-		</section>
-
 		<%-# For Student User Accounts -%>
 
-		<% if current_user.user_type == 1 %>
+		<% if current_user.user_type == 1 and @user.user_type == 1 %>
 
-        <p>
-		<%= link_to "New completed Student Application Form", new_app_path(@user) %>
-		</p>
+			<section>
+				<h1>
+					Your Completed Student Documents:
+				</h1>
+			</section>
 
-		<p>
-		<%= link_to "Your completed Student Application Form", @app %>
-		</p>
-
-		<table class="table table-bordered">
-			<tr>
-				<th>Your Application Requirements:</th>
-				<th>Status:</th>
-			</tr>
-			<tr>
-				<th>Faculty Recomendation:</th>
-				<td>status</td>
-			</tr>
-			<tr>
-				<th>Committee Evaluation:</th>
-				<td>status</td>
-			</tr>
-		</table>
+			<% if @app == nil %>
+		        <p>
+				<%= link_to "New Student Application Form", new_app_path(@user) %>
+				<% else %>
+				<%= link_to "Your completed Student Application Form", @app %>
+				</p>
+			<% end %>
 		<% end %>
 
 		<%-# For Professor User Accounts -%>
 
-		<% if current_user.user_type == 2 %>
+		<% if current_user.user_type == 2 and @user.user_type == 2 %>
+
+		<section>
+			<h1>
+				Your Completed Faculty Documents:
+			</h1>
+		</section>
 
 		<p>
 		<%= link_to "New Faculty Rec Form", new_facultyrec_path(@user) %>
@@ -82,29 +73,31 @@
 
 		<%-# For Committee Member User Accounts -%>
 
-		<% if current_user.user_type == 3 %>
+		<% if current_user.user_type == 3 and @user.user_type == 3 %>
 
-		<p>
-		<%= link_to "Your completed Evaluations", committee_member_evaluations_path %>
-		</p>
+		<section>
+			<h1>
+				Your Completed Committee Documents
+			</h1>
+		</section>
 
-			<% if @user.user_type == 1 %>
-			<section>
-				<h1> Applicant User Summary </h1>
-				<p>
-			     <%= link_to "Applicant's Completed Application Form", @app %>
-			    </p>
-				<p>
-			    <%= link_to "Applicant's Completed Faculty Recomendations", @facultyrec %>
-			    </p>
-			    <p>
-			    <%= link_to "Applicant's Committee Member Evaluations", @committee_member_evaluation %>
-			    </p>
-			    <p>
-			    <%= link_to "Create an evaluation for this student",new_committee_member_evaluation_path(@user) %>
-			    </p>
-			</section>
-			<% end %>
+			<p>
+			<%= link_to "Create a New Evaluation", new_committee_member_evaluation_path %>
+			</p>
+
+			<p>
+			<%= link_to "Your completed Evaluations", committee_member_evaluations_path %>
+			</p>
+
 		<% end %>
+
 	</aside>
+</div>
+<%# Application Status Table %>
+<div class="row">
+<section class="span10">
+<% if @user.user_type == 1 %>
+<%= render partial: 'shared/application_status_item' %>
+<% end %>
+</section>
 </div>

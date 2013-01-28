@@ -1,0 +1,41 @@
+<table class="table table-bordered">
+	<tr>
+		<th>Application Requirements:</th>
+		<th>Users:</th>
+		<th>Status: (recieved or incomplete)</th>
+		<% if current_user.user_type == 3 %>
+		<th>View Documents:</th>
+		<% end %>
+	</tr>
+	<tr>
+		<th>Honors Application:</th>
+		<td><%= honors_app_owner %></td>
+		<td><%= honors_app_status %></td>
+		<% if current_user.user_type == 3 %>
+		<td><%= link_to 'View Student Application', @app %></td>
+		<% end %>
+	</tr>
+	<tr>
+		<th>Faculty Recommendation:</th>
+		<td><%= faculty_rec_owner %></td>
+		<td><%= faculty_rec_status %></td>
+		<% if current_user.user_type == 3 %>
+		<td><%= view_faculty_rec %></td>
+		<% end %>
+	</tr>
+	<tr>
+		<th rowspan="2">Committee Evaluation:</th>
+		<td><%= committee_eval_one_owner %></td>
+		<td><%= committee_eval_one_status %></td>
+		<% if current_user.user_type == 3 %>
+		<td><%= view_eval_one %></td>
+		<% end %>
+	</tr>
+	<tr>
+		<td><%= committee_eval_two_owner %></td>
+		<td><%= committee_eval_two_status %></td>
+		<% if current_user.user_type == 3 %>
+		<td><%= view_eval_two %></td>
+		<% end %>
+	</tr>
+</table>
