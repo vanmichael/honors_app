@@ -15,6 +15,17 @@ module UsersHelper
 		end
 	end
 
+	def show_user_type(user)
+
+		if user.user_type == 3
+			'Committee Member'
+		elsif user.user_type == 2
+			'Faculty Member'
+		else
+			'Student Applicant'
+		end
+	end
+
 	def honors_app_status
 		if @app.nil?
 			'incomplete'
