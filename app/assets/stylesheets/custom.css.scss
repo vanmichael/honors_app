@@ -264,7 +264,13 @@ aside {
 /* game */
 
 .table-bordered {
+
   table-layout: fixed;
+
+}
+
+.app-status {
+  table-layout: auto;
 }
 
 /* Proflile Picture */
