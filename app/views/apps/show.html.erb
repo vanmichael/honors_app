@@ -15,42 +15,64 @@
 		<th>Year of Graduation:</th>
 		<td> <%= @app.year_of_grad %></td>
 	</tr>
-
 	<tr>
 		<th>Faculty Member Email:</th>
 		<td> <%= @app.faculty_email %> </td>
 	</tr>
-
 	<tr>
-		<td onclick="showQuestion()"> Question 1: </td>
-		<td colspan="2">
+		<th>Question 1:</th>
+		<td>
+			<b><i>What interests you about the Babson honors program and what are your expectations if you participate?"</i></b>
+		</td>
+	</tr>
+	<tr>
+		<td> Student Response 1: </td>
+		<td>
 	<%= @app.q1 %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 2: </td>
-		<td colspan="2">
+		<th>Question 2:</th>
+		<td>
+			<b><i>Write about research that you have done previously and why it interested you.</i></b>
+		</td>
+	</tr>
+	<tr>
+		<td> Student Response 2: </td>
+		<td>
 	<%= @app.q2 %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 3: </td>
-		<td colspan="2">
+		<th>Question 3:</th>
+		<td>
+			<b><i>If you could witness one moment in history, what would it be and why would you chose that one?</i></b>
+		</td>
+	</tr>
+	<tr>
+		<td> Student Response 3: </td>
+		<td>
 	<%= @app.q3 %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 4: </td>
-		<td colspan="2">
+		<th>Question 4:</th>
+		<td>
+			<b><i>If you founded your own college, what topics of study would you make mandatory for all students to study and why? What would be the values and priorities of your institution?</i></b>
+		</td>
+	</tr>
+	<tr>
+		<td> Student Response 4: </td>
+		<td>
 	<%= @app.q4 %>
 		</td>
 	</tr>
 	<tr>
-		<td> Student Writing Sample:</td>
+		<th> Student Writing Sample:</th>
 		<td> <%= image_tag "word.png", :mouseover => @app.essay_url.to_s %></td>
 	</tr>
 	<tr>
-		<td> Student Writing Sample:</td>
+		<th> Student Writing Sample:</th>
 		<td> <%= image_tag "pdf.png", :mouseover => @app.transcript_url.to_s %></td>
 	</tr>
 	

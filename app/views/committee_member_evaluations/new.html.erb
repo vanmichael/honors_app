@@ -1,97 +1,160 @@
 <h1>New Committee Member Evaluations</h1>
 
 <p>This is the evaluation form to be used ONLY by the members of the Honors Council. If you received this link in error, please do not fill out the form and contact Emily Marks (emarks@babson.edu) as soon as possible.</p>
+</br>
 
 <%= form_for(@evaluation) do |f| %>
 
 	<%= f.hidden_field :user_id, :value => @user %>
 
-	<%= f.label :name, "Please enter YOUR NAME (the evaluator) below to begin the evaluation." %>
-	<%= f.text_field :name %>
+<div class="row">
+	<div class="span6">
+	<%= f.label :name, "Please enter YOUR NAME to the right to begin the evaluation." %>
+	</div>
+	<div class="span3">
+	<%= f.text_field :name, :placeholder => 'Your Name' %>
+	</div>
+</div>
 
-	<%= f.label :app_id, "Application ID" %>
+<div class="row">
+	<div class="span6">
+	<%= f.label :app_id, "Application ID:" %>
+	</div>
+</div>
+<div class="row">
+	<div class="span1">
 	<%= f.text_field :app_id %>
-
+	</div>
+</div>
+<div class="row">
+	<div class="span10">
 	<%= f.label :applicant_name, "Please enter the name of the applicant you are evaluating for admission to the Honors Program" %>
-	<%= f.text_field :applicant_name %>
-
-	<%= f.label :q1, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's academic ability relative to other high achieving students you have taught?" %>
-
-<div class = "form_row">
-	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+	</div>
 </div>
+<div class="row">
+	<div class="span3">
+	<%= f.text_field :applicant_name, :placeholder => 'Student Name' %>
+	</div>
+</div>
+
+	<%= f.label :q1, "1. On a scale of 1 (poor) to 5 (outstanding), please rate the applicant on his/her academic accomplishments. Please take into consideration the applicant's GPA and overall performances in all of his/her courses to date." %>
+
 <div class="form_row" >
-	<%= f.radio_button :q1, "1" %>
-	<%= f.radio_button :q1, "2" %>
-	<%= f.radio_button :q1, "3" %>
-	<%= f.radio_button :q1, "4" %>
-	<%= f.radio_button :q1, "5" %>
+<table>
+	<tr>
+	<th>1</th> <th> </th> <th>2</th> <th> </th> <th>3</th> <th> </th> <th>4</th> <th> </th> <th>5</th>
+	</tr>
+	<tr>
+	<td><%= f.radio_button :q1, "1" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q1, "2" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q1, "3" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q1, "4" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q1, "5" %></td>
+	</tr>
+</table>
 </div>
 
-	<%= f.label :q1_com, "In a sentence or two, please explain your reasons for your response regarding the applicant's academic ability." %>
-	<%= f.text_area :q1_com %>
+	<%= f.label :q1_com, "Briefly justify your rating above on the applicant's academic accomplishments." %>
+	<%= f.text_area :q1_com, :cols => "30", :rows => "10" %>
 
-	<%= f.label :q2, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's intellectual engagement relative to other high achieving students ?" %>
+	<%= f.label :q2, "2. On a scale of 1 (unacceptable) to 5 (superior), please rate the applicant's potential for scholarly research." %>
 
-<div class = "form_row">
-	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
-</div>
 <div class="form_row" >
-	<%= f.radio_button :q2, "1" %>
-	<%= f.radio_button :q2, "2" %>
-	<%= f.radio_button :q2, "3" %>
-	<%= f.radio_button :q2, "4" %>
-	<%= f.radio_button :q2, "5" %>
+<table>
+	<tr>
+	<th>1</th> <th> </th> <th>2</th> <th> </th> <th>3</th> <th> </th> <th>4</th> <th> </th> <th>5</th>
+	</tr>
+	<tr>
+	<td><%= f.radio_button :q2, "1" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q2, "2" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q2, "3" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q2, "4" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q2, "5" %></td>
+	</tr>
+</table>
 </div>
 
-	<%= f.label :q3, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?" %>
+	<%= f.label :q3, "3. On a scale of 1 (poor) to 5 (outstanding), please rate the applicant's writing ability." %>
 
-<div class = "form_row">
-	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
-</div>
 <div class="form_row" >
-	<%= f.radio_button :q3, "1" %>
-	<%= f.radio_button :q3, "2" %>
-	<%= f.radio_button :q3, "3" %>
-	<%= f.radio_button :q3, "4" %>
-	<%= f.radio_button :q3, "5" %>
+<table>
+	<tr>
+	<th>1</th> <th> </th> <th>2</th> <th> </th> <th>3</th> <th> </th> <th>4</th> <th> </th> <th>5</th>
+	</tr>
+	<tr>
+	<td><%= f.radio_button :q3, "1" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q3, "2" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q3, "3" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q3, "4" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q3, "5" %></td>
+	</tr>
+</table>
 </div>
 
-	<%= f.label :q2_q3_com, "In a sentence or two, please explain your reasons for your response regarding the applicant's potential for independent research." %>
-	<%= f.text_area :q2_q3_com %>
+	<%= f.label :q2_q3_com, "Kindly justify your rating of the applicant's ability for scholarly research and the applicant's writing ability." %>
+	<%= f.text_area :q2_q3_com, :cols => "30", :rows => "10" %>
 
 
-	<%= f.label :q4, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?" %>
+	<%= f.label :q4, "4. On a scale of 1 (poor) to 5 (outstanding), please rate the applicant's suitability and potential for the Honors Program in Babson College." %>
 
-<div class = "form_row">
-	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
-</div>
 <div class="form_row" >
-	<%= f.radio_button :q4, "1" %>
-	<%= f.radio_button :q4, "2" %>
-	<%= f.radio_button :q4, "3" %>
-	<%= f.radio_button :q4, "4" %>
-	<%= f.radio_button :q4, "5" %>
+<table>
+	<tr>
+	<th>1</th> <th> </th> <th>2</th> <th> </th> <th>3</th> <th> </th> <th>4</th> <th> </th> <th>5</th>
+	</tr>
+	<tr>
+	<td><%= f.radio_button :q4, "1" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q4, "2" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q4, "3" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q4, "4" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q4, "5" %></td>
+	</tr>
+</table>
 </div>
 
-	<%= f.label :q5_com, "What personal attributes indicate this applicant's capacity to be an engaged scholar and a collegial member of the Honors Program community." %>
-	<%= f.text_area :q5_com %>
+	<%= f.label :q5_com, "5. What personal attributes indicate this applicant's capacity to be an engaged scholar and a collegial member of the Honors Program community." %>
+	<%= f.text_area :q5_com, :cols => "30", :rows => "10" %>
 
-	<%= f.label :q6_com, "Please provide any other information that you would like the Honors Council to know about this student." %>
-	<%= f.text_area :q6_com %>
+	<%= f.label :q6_com, "6. Please provide any other information that you would like the Honors Council to know about this student." %>
+	<%= f.text_area :q6_com, :cols => "30", :rows => "10" %>
 
-<%= f.label :q7, "On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?" %>
+<%= f.label :q7, "7. Please provide an overall rank for the applicant on a scale of 1 (clear deny) to 5 (clear admit)." %>
 
-<div class = "form_row">
-	1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
-</div>
 <div class="form_row" >
-	<%= f.radio_button :q7, "1" %>
-	<%= f.radio_button :q7, "2" %>
-	<%= f.radio_button :q7, "3" %>
-	<%= f.radio_button :q7, "4" %>
-	<%= f.radio_button :q7, "5" %>
+<table>
+	<tr>
+	<th>1</th> <th> </th> <th>2</th> <th> </th> <th>3</th> <th> </th> <th>4</th> <th> </th> <th>5</th>
+	</tr>
+	<tr>
+	<td><%= f.radio_button :q7, "1" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q7, "2" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q7, "3" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q7, "4" %></td>
+	<td> </td>
+	<td><%= f.radio_button :q7, "5" %></td>
+	</tr>
+</table>
 </div>
+</br>
 
 	<%= f.submit "Submit Evaluation", class: "btn btn-large btn-primary" %>
 

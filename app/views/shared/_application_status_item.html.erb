@@ -8,35 +8,35 @@
 		<% end %>
 	</tr>
 	<tr>
-		<th>Honors Application:</th>
-		<td><%= honors_app_owner %></td>
-		<td><%= honors_app_status %></td>
-		<td style="text-align:center;"><%= image_status(honors_app_status) %></td>
+		<th>Honors Application: <%= show_app_id %></th>
+		<th><%= honors_app_owner %></th>
+		<th><%= honors_app_status %></th>
+		<th style="text-align:center;"><%= image_status(honors_app_status) %></th>
 		<% if current_user.user_type == 3 %>
-		<td><%= link_to 'View Student Application', @app %></td>
+		<th><%= link_to 'View Student Application', @app %></th>
 		<% end %>
 	</tr>
 	<tr>
 		<th>Faculty Recommendation:</th>
-		<td><%= faculty_rec_owner %></td>
-		<td><%= faculty_rec_status %></td>
-		<td style="text-align:center;"><%= image_status(faculty_rec_status) %></td>
+		<th><%= faculty_rec_owner %></th>
+		<th><%= faculty_rec_status %></th>
+		<th style="text-align:center;"><%= image_status(faculty_rec_status) %></th>
 		<% if current_user.user_type == 3 %>
-		<td><%= view_faculty_rec %></td>
+		<th><%= view_faculty_rec %></th>
 		<% end %>
 	</tr>
 	<tr>
 		<th rowspan="2">Committee Evaluation:</th>
-		<td><%= committee_eval_one_owner %></td>
-		<td><%= committee_eval_one_status %></td>
+		<th><%= committee_eval_one_owner %></th>
+		<th><%= committee_eval_one_status %></th>
 		<td style="text-align:center;"><%= image_status(committee_eval_one_status) %></td>
 		<% if current_user.user_type == 3 %>
-		<td><%= view_eval_one %></td>
+		<th><%= view_eval_one %></th>
 		<% end %>
 	</tr>
 	<tr>
-		<td><%= committee_eval_two_owner %></td>
-		<td><%= committee_eval_two_status %></td>
+		<th><%= committee_eval_two_owner %></th>
+		<th><%= committee_eval_two_status %></th>
 		<td style="text-align:center;"><%= image_status(committee_eval_two_status) %></td>
 		<% if current_user.user_type == 3 %>
 		<td><%= view_eval_two %></td>

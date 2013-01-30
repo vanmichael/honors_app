@@ -2,9 +2,7 @@
 
 <h3> Honors Faculty Recomendation </h3>
 
-<div>
-
-<table class="table">
+<table class="table table-bordered">
 	<tr>
 		<th>Faculty Name</th>
 		<th>Babson Title</th>
@@ -26,65 +24,121 @@
 		</td>
 	</tr>
 	<tr>
-		<td> Question 1 </td>
+		<td><b>Question 1.</b></td>
+		<td colspan="3"><b><i>On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's academic ability relative to other high achieving students you have taught?</i></b></td>
+	</tr>
+	<tr>
+		<td><b>Ranking:</b></td>
 		<td colspan="3">
-	<%= @facultyrec.q1 %>
+		<b><%= @facultyrec.q1 %></b>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 1 </td>
+		<td><b>Question 1.</b></td>
+		<td colspan="3"><b><i>In a sentence or two, please explain your reasons for your response regarding the applicant's academic ability.</i></b></td>
+	</tr>
+	<tr>
+		<td><b>Response 1.</b></td>
 		<td colspan="3">
 	<%= @facultyrec.q1_com %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 2 </td>
+		<td><b>Question 2.</b></td>
+		<td colspan="3"><b><i>On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's intellectual engagement relative to other high achieving students?</i></b></td>
+	</tr>
+	<tr>
+		<td><b>Ranking:</b></td>
 		<td colspan="3">
-	<%= @facultyrec.q2 %>
+		<b><%= @facultyrec.q2 %></b>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 2 </td>
+		<td><b>Question 2.</b></td>
+		<td colspan="3"><b><i>In a sentence or two, please explain your reasons for your response regarding the applicant's intellectual engagement.</i></b></td>
+	</tr>
+	<tr>
+		<td><b>Response 2.</b></td>
 		<td colspan="3">
 	<%= @facultyrec.q2_com %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 3 </td>
+		<td><b>Question 3.</b></td>
+		<td colspan="3"><b><i>On a scale of 1 (Poor) to 5 (Excellent), how will you rate the applicant's potential for and interest in independent research?</i></b></td>
+	</tr>
+	<tr>
+		<td><b>Ranking:</b></td>
 		<td colspan="3">
-	<%= @facultyrec.q3 %>
+		<b><%= @facultyrec.q3 %></b>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 3 </td>
+		<td><b>Question 3.</b></td>
+		<td colspan="3"><b><i>In a sentence or two, please explain your reasons for your response regarding the applicant's potential for independent research.</i></b></td>
+	</tr>
+	<tr>
+		<td><b>Response 3.</b></td>
 		<td colspan="3">
-	<%= @facultyrec.q3_com %>
+		<%= @facultyrec.q3_com %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 4 </td>
+		<td><b>Question 4.</b></td>
+		<td colspan="3"><b><i>On a scale of 1(Poor) to 5 (Exceptional), please rate the applicant's writing ability.</i></b></td>
+	</tr>
+	<tr>
+		<td><b>Ranking:</b></td>
 		<td colspan="3">
-	<%= @facultyrec.q4 %>
+		<b><%= @facultyrec.q4 %></b>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 4 </td>
+		<td><b>Question 4.</b></td>
 		<td colspan="3">
-	<%= @facultyrec.q4_com %>
+		<b><i>In a sentence of two, please comment on the applicant's writing ability.</i></b>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 5 </td>
+		<td><b>Response 4.</b></td>
 		<td colspan="3">
-	<%= @facultyrec.q5_com %>
+		<%= @facultyrec.q4_com %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 6 </td>
+		<td><b>Question 5.</b></td>
 		<td colspan="3">
-	<%= @facultyrec.q6_com %>
+		<b>What personal attributes indicate this applicant's capacity to be an engaged scholar and a collegial member of the Honors Program community.</b>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Response 5..</b></td>
+		<td colspan="3">
+		<%= @facultyrec.q5_com %>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Question 6.</b></td>
+		<td colspan="3">
+		<b>What are this student’s weaknesses or areas that need improvement?</b>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Response 6.</b></td>
+		<td colspan="3">
+		<%= @facultyrec.q6_com %>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Question 7.</b></td>
+		<td colspan="3">
+		<b>Please provide any other information that you would like the Honors Council to know about this student.</b>
+		</td>
+	</tr>
+	<tr>
+		<td><b>Response 7.</b></td>
+		<td colspan="3">
+		<%= @facultyrec.q7_com %>
 		</td>
 	</tr>
  </table>
-
-</div>

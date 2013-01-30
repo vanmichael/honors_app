@@ -7,6 +7,14 @@ module UsersHelper
 		user.first_name + " " + user.last_name
 	end
 
+	def show_app_id
+		if @app.nil?
+			'App Id: Unknown'
+		else
+			'App Id: ' + @app.id.to_s
+		end
+	end
+
 	def honors_app_status
 		if @app.nil?
 			'incomplete'

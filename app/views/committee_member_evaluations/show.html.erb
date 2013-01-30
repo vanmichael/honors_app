@@ -2,74 +2,94 @@
 
 <div>
 
-<table class="table">
+<table class="table table-bordered">
 	<tr>
-		<th>Member Name</th>
-		<th>Student Name</th>
-		<th>Application ID </th>
+		<th><i>Member Name: </i> <%= @evaluation.name %></th>
+		<th><i>Student Name: </i> <%= @evaluation.applicant_name %></th>
+		<th><i>Application ID: </i><%= @evaluation.app_id %></th>
 	</tr>
 	<tr>
-		<td>
-	<%= @evaluation.name %>
-		</td>
-		<td>
-	<%= @evaluation.applicant_name %>
-		</td>
-		<td>
-	<%= @evaluation.app_id %>
-		</td>
+		<th>Question 1.</th>
+		<td colspan="3"><b><i>1. On a scale of 1 (poor) to 5 (outstanding), please rate the applicant on his/her academic accomplishments. Please take into consideration the applicant's GPA and overall performances in all of his/her courses to date.</i></b></td>
 	</tr>
 	<tr>
-		<td> Question 1 </td>
-		<td colspan="3">
+		<th>Ranking:</th>
+		<th colspan="3">
 	<%= @evaluation.q1 %>
-		</td>
+		</th>
 	</tr>
 	<tr>
-		<td> Question 1 </td>
+		<th>Response 1.</th>
 		<td colspan="3">
 	<%= @evaluation.q1_com %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 2 </td>
-		<td colspan="3">
+		<th>Question 2.</th>
+		<th colspan="3"><i>2. On a scale of 1 (unacceptable) to 5 (superior), please rate the applicant's potential for scholarly research.</i>
+		</th>
+	</tr>
+	<tr>
+		<th>Ranking:</th>
+		<th colspan="3">
 	<%= @evaluation.q2 %>
-		</td>
+		</th>
 	</tr>
 	<tr>
-		<td> Question 3 </td>
-		<td colspan="3">
+		<th>Question 3.</th>
+		<th colspan="3">
+		<i>On a scale of 1 (poor) to 5 (outstanding), please rate the applicant's writing ability.</i>
+		</th>
+	</tr>
+	<tr>
+		<th>Ranking:</th>
+		<th colspan="3">
 	<%= @evaluation.q3 %>
-		</td>
+		</th>
 	</tr>
 	<tr>
-		<td> Question 2 and 3 </td>
+		<th>Response:</th>
 		<td colspan="3">
 	<%= @evaluation.q2_q3_com %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 4 </td>
-		<td colspan="3">
-	<%= @evaluation.q4 %>
-		</td>
+		<th>Question 4:</th>
+		<th colspan="3"><i>On a scale of 1 (poor) to 5 (outstanding), please rate the applicant's suitability and potential for the Honors Program in Babson College.</i></th>
 	</tr>
 	<tr>
-		<td> Question 5 </td>
+		<th>Ranking:</th>
+		<th colspan="3">
+	<%= @evaluation.q4 %>
+		</th>
+	</tr>
+	<tr>
+		<th>Question 5:</th>
+		<th colspan="3"><i>What personal attributes indicate this applicant's capacity to be an engaged scholar and a collegial member of the Honors Program community.</i></th>
+	</tr>
+	<tr>
+		<th>Response:</th>
 		<td colspan="3">
 	<%= @evaluation.q5_com %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 6 </td>
+		<th>Question 6:</th>
+		<th colspan="3"><i>Please provide any other information that you would like the Honors Council to know about this student.</i></th>
+	</tr>
+	<tr>
+		<th>Response:</th>
 		<td colspan="3">
 	<%= @evaluation.q6_com %>
 		</td>
 	</tr>
 	<tr>
-		<td> Question 7 </td>
-		<td colspan="3">
+		<th>Question 7:</th>
+		<th colspan="3"><i>Please provide an overall rank for the applicant on a scale of 1 (clear deny) to 5 (clear admit).</i></th>
+	</tr>
+	<tr>
+		<th>Ranking:</th>
+		<th colspan="3">
 	<%= @evaluation.q7 %>
 		</td>
 	</tr>

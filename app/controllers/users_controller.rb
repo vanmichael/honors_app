@@ -40,6 +40,7 @@ class UsersController < ApplicationController
        redirect_to new_committee_member_evaluation_path(@user)
        end 
     else
+       flash[:error] = "User Account Not Created, Please Try Again!"
        redirect_to root_path
     end
   end

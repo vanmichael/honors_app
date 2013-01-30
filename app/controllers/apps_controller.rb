@@ -11,11 +11,12 @@ class AppsController < ApplicationController
 	  	if @app.save
 	  		 @user = current_user
 	  		 @faculty_email = @app.faculty_email
-       		 UserMailer.faculty_rec_email(@user, @faculty_email).deliver
+       		 UserMailer.faculty_rec_email(@user, @faculty_email, @app).deliver
 	  		 flash[:success] = "Application Created"
-	  		 redirect_to root_path
+	  		 redirect_to current_user
 	  	else
-	  		render 'new'
+	  		flash[:error] = "Application not created, Go to profile and create a new application, but Please click check box to accept and enter faculty email!"
+	  		redirect_to root_path
 	  	end
 	end
 
