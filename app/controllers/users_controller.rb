@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
-    @student_applicants = User.paginate(:conditions => {:user_type => 1}, :page => params[:page], :order => 'created_at desc')
+    @student_applicants = User.paginate(:conditions => {:user_type => 1}, :page => params[:page], :order => 'first_name ASC')
     @faculty_members = User.paginate(:conditions => {:user_type => 2}, :page => params[:page], :order => 'created_at desc')
     @committee_members = User.paginate(:conditions => {:user_type => 3}, :page => params[:page], :order => 'created_at desc')
   end
