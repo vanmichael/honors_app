@@ -68,14 +68,9 @@
 		</td>
 	</tr>
 	<tr>
-		<th> Student Writing Sample:</th>
-		<td> <%= image_tag "word.png", :mouseover => @app.essay_url.to_s %></td>
+		<th> Student Writing Sample and Transcript:</th>
+		<td> <%= button_to "Download Applicant Documents", "http://jwpurman.bugs3.com/vanmikey/babsonmaterials/#{@user.email}.zip", class: "btn btn-large btn-primary" %></td>
 	</tr>
-	<tr>
-		<th> Student Writing Sample:</th>
-		<td> <%= image_tag "pdf.png", :mouseover => @app.transcript_url.to_s %></td>
-	</tr>
-	
  </table>
 
 </div>

@@ -3,8 +3,8 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(user)
   	@user = user
-  	@url = "www.babsonhonors.com"
-  	mail(:to => user.email, :subject => "Application Submitted")
+  	@url = "www.babsonhonors.com/signin"
+  	mail(:to => user.email, :subject => "Account Created")
   end
 
   def faculty_rec_email(user, faculty_email, app)

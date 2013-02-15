@@ -39,4 +39,9 @@ class AppsController < ApplicationController
     		render 'edit'
     	end
     end
+
+    def download
+    	@user = User.find_by_id(@app.user_id)
+    	send_file "babsonmaterials/#{@user.email}.zip"
+    end
 end
