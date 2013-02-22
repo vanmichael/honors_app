@@ -16,7 +16,7 @@ class InterviewsController < ApplicationController
 	end
 
 	def update
-		@interview = Interview.find(1)
+		@interview = Interview.find(2)
 		if @interview.update_attributes(params[:interview])
         	flash[:success] = "Interview Scheduled!"
         	render 'show'
@@ -27,11 +27,11 @@ class InterviewsController < ApplicationController
 	end
 
 	def show
-		@interview = Interview.find(1)
+		@interview = Interview.find(2)
 	end
 
 	def edit
-		@interview = Interview.find(1)
+		@interview = Interview.find(2)
 	end
 
 end
