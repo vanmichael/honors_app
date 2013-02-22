@@ -13,6 +13,7 @@ HonorsApp::Application.routes.draw do
   resources :apps
   resources :facultyrecs
   resources :committee_member_evaluations
+  resources :interviews
 
   #Custom Routes for User Accounts
 

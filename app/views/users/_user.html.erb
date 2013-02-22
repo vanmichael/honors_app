@@ -15,7 +15,7 @@
             <h5>Committee Email: </h5>
              <% end %>
         </th>
-		<th style="width:130px;">Account:</th>
+		<th style="width:130px;">Ranking:</th>
 	</tr>
 	<tr>
 	<th><%= link_to user.first_name + " " + user.last_name, user %></th>
@@ -34,9 +34,7 @@
         <%= user.email %>
     </td>
    	<td>
-	<% if current_user.admin? && !current_user?(user) %>
-		| <%= link_to "delete", user, method: :delete, confirm: "You sure?" %>
-	<% end %>
+	   rank
     </td>
     </tr>
     </table>

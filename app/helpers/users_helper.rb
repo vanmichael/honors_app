@@ -167,4 +167,5 @@ module UsersHelper
 			image_tag("incomplete.png")
 		end
 	end
+
 end
