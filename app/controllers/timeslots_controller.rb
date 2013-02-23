@@ -17,7 +17,7 @@ class TimeslotsController < ApplicationController
 
 	def update
 		@interview = Timeslot.find(1)
-		if @interview.update_attributes(params[:interview])
+		if @interview.update_attributes(params[:timeslot])
         	flash[:success] = "Interview Scheduled!"
         	render 'show'
     	else
