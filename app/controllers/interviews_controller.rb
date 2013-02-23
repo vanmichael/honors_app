@@ -33,5 +33,4 @@ class InterviewsController < ApplicationController
 	def edit
 		@interview = Interview.find(2)
 	end
-
 end
