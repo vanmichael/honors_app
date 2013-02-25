@@ -160,6 +160,93 @@ module UsersHelper
 		end
 	end
 
+	def interview_eval_one_status
+		if @app == nil
+			'incomplete'
+		else
+			@interview_evals = InterviewEvaluation.find_by_app_id(@app)
+			if @interview_evals == nil
+				'incomplete' 
+			else
+				'recieved'
+			end
+		end
+	end
+
+	def interview_eval_one_owner
+		if @app == nil
+			'None yet!'
+		else
+			@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+			if @interview_evaluations.empty?
+				'1st Evaluator for: ' + fullname(@user)
+			else
+			@interview_eval_one = @interview_evaluations.first
+			@interviewer_one = User.find_by_id(@interview_eval_one.user_id)
+			fullname(@interviewer_one)
+			end
+		end
+	end
+
+	def view_interview_eval_one
+		if @app == nil
+			'Not Available'
+		else
+			@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+			if @interview_evaluations.empty?
+				link_to "Create a Interview Evaluation", new_interview_evaluation_path
+			else
+			@interview_eval_one = @interview_evaluations.first
+			@interviewer_one = User.find_by_id(@interview_eval_one.user_id)
+			link_to "View Interview Evaluation from #{fullname(@interviewer_one)}", @interview_eval_one
+			end
+		end
+	end
+
+	def interview_eval_two_status
+		if @app == nil
+			'incomplete'
+		else
+			@inteval = InterviewEvaluation.find_all_by_app_id(@app)
+			@count = @inteval.count
+			if @count > 1
+				'recieved'
+			else
+				'incomplete'
+			end
+		end
+	end
+
+	def interview_eval_two_owner
+		if @app == nil
+			'None yet!'
+		else
+			@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+			if @interview_evaluations.count > 1
+			@interview_eval_two = @interview_evaluations.last
+			@interviewer_two = User.find_by_id(@interview_eval_two.user_id)
+			fullname(@interviewer_two)
+			else
+			'2nd Evaluator for: ' + fullname(@user)
+			end
+		end
+	end
+
+	def view_interview_eval_two
+		if @app == nil
+			'Not Available'
+		else
+			@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+			if @interview_evaluations.count > 1
+			@interview_eval_two = @interview_evaluations.last
+			@interviewer_two = User.find_by_id(@interview_eval_two.user_id)
+			link_to "View Interview Evaluation from #{fullname(@interviewer_two)}", @interview_eval_two
+			else
+			link_to "Create a Interview Evaluation", new_interview_evaluation_path
+			end
+		end
+	end
+
 	def image_status(status)
 		if status == 'recieved'
 			image_tag("greencheck.jpg")

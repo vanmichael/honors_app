@@ -42,4 +42,21 @@
 		<td><%= view_eval_two %></td>
 		<% end %>
 	</tr>
+	<tr>
+		<th rowspan="2">Interview Evaluation:</th>
+		<th><%= interview_eval_one_owner %></th>
+		<th><%= interview_eval_one_status %></th>
+		<td style="text-align:center;"><%= image_status(interview_eval_one_status) %></td>
+		<% if current_user.user_type == 3 %>
+		<th><%= view_interview_eval_one %></th>
+		<% end %>
+	</tr>
+	<tr>
+		<th><%= interview_eval_two_owner %></th>
+		<th><%= interview_eval_two_status %></th>
+		<td style="text-align:center;"><%= image_status(interview_eval_two_status) %></td>
+		<% if current_user.user_type == 3 %>
+		<td><%= view_interview_eval_two %></td>
+		<% end %>
+	</tr>
 </table>

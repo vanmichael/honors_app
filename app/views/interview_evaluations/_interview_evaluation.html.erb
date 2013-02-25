@@ -1,0 +1,14 @@
+
+<li>
+  <table class="table table-bordered">
+    <tr>
+      <th>Applicant Name:</th>
+      <th>Created At:</th>
+    </tr>
+    <tr>
+      <td><%= link_to interview_evaluation.applicant_name, interview_evaluation %></td>
+      <td>Posted <%= time_ago_in_words(interview_evaluation.created_at) %> ago</td>
+  </tr>
+  </table>
+</li>
+

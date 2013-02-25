@@ -13,8 +13,9 @@ HonorsApp::Application.routes.draw do
   resources :apps
   resources :facultyrecs
   resources :committee_member_evaluations
-  resources :interviews
+  resources :interview_evaluations
   resources :timeslots
+
 
   #Custom Routes for User Accounts
 

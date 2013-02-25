@@ -1,0 +1,36 @@
+<h1> Interview Evaluation Form </h1>
+
+<div>
+
+<table class="table table-bordered">
+	<tr>
+		<th><i>Member Name: </i> <%= @interview_evaluation.name %></th>
+		<th><i>Student Name: </i> <%= @interview_evaluation.applicant_name %></th>
+		<th><i>Application ID: </i><%= @interview_evaluation.app_id %></th>
+		<th><i>Date:</i><%= @interview_evaluation.date %></th>
+	</tr>
+	<tr>
+		<th>Question 1.</th>
+		<td colspan="4"><b><i>Please indicate your recommendation for admission to the Honors Program as follows:</i></b></td>
+	</tr>
+	<tr>
+		<th>Rating:</th>
+		<th colspan="4">
+	<%= @interview_evaluation.q1 %>
+		</th>
+	</tr>
+	<tr>
+		<th>Response 1.</th>
+		<td colspan="4">
+	Please write 3-4 sentences explaining your decision:
+		</td>
+	</tr>
+	<tr>
+		<th>Response 1.</th>
+		<td colspan="4">
+	<%= @interview_evaluation.q1_com %>
+		</td>
+	</tr>
+ </table>
+
+</div>

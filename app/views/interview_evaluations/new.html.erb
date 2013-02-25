@@ -1,0 +1,84 @@
+<h1>New Interview Evaluation</h1>
+
+<p>Honors Council Member Evaluation:</p>
+</br>
+
+<%= form_for(@interview_evaluation) do |f| %>
+
+	<%= f.hidden_field :user_id, :value => @user %>
+
+<div class="row">
+	<div class="span5">
+	<%= f.label :app_id, "Application ID: of Student Applicant you are evaluating." %>
+	</div>
+	<div class="span1">
+	<%= f.text_field :app_id, :placeholder => 'App ID' %>
+	</div>
+</div>
+<div class="row">
+	<div class="span3">
+	<%= f.label :applicant_name, "Applicants Name:" %>
+	</div>
+	<div class="span3">
+	<%= f.text_field :applicant_name, :placeholder => 'Applicants Name' %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span3">
+	<%= f.label :name, "Honors Council Member's Name:" %>
+	</div>
+	<div class="span3">
+	<%= f.text_field :name, :placeholder => 'Your Name' %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span3">
+	<%= f.label :date, "Date of Interview:" %>
+	</div>
+	<div class="span3">
+	<%= f.text_field :date, :placeholder => 'Date' %>
+	</div>
+</div>
+
+	<%= f.label :q1, "Please indicate your recommendation for admission to the Honors Program as follows:" %>
+
+<div class="form_row" >
+<table>
+	<tr>
+		<th><%= f.radio_button :q1, "5" %></th>
+		<td><b> 5 = Definitely admit</b></td>
+	</tr>
+		<tr>
+		<th><%= f.radio_button :q1, "4" %></th>
+		<td><b> 4 = Probably admit</b></td>
+	</tr>
+	<tr>
+		<th><%= f.radio_button :q1, "3" %></th>
+		<td><b> 3 = Maybe admit</b></td>
+	</tr>
+	<tr>
+		<th><%= f.radio_button :q1, "2" %></th>
+		<td><b> 2 = Probably do not admit</b></td>
+	</tr>
+	<tr>
+		<th><%= f.radio_button :q1, "1" %></th>
+		<td><b> 1 = Definitely do not admit</b></td>
+	</tr>
+</table>
+
+</br>
+
+</div>
+
+	<%= f.label :q1_com, "Please write 3-4 sentences explaining your decision:" %>
+	<%= f.text_area :q1_com, :cols => "30", :rows => "10" %>
+
+</br>
+
+	<%= f.submit "Submit Evaluation", class: "btn btn-large btn-primary" %>
+
+<% end %>
+
+
