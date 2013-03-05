@@ -1,0 +1,28 @@
+<h1>Highest to Lowest Interview Score </h1>
+<h3>Total Applicants: <%= @scores.count %></h3>
+	<table class="table table-bordered">
+	<tr>
+       <th>Last Name:</th>
+       <th>First Name:</th>
+       <th>Interview Score 1</th>
+       <th>Interview Score 2</th>
+       <th>Interview Score Total </th>
+       <th>Reader Score 1</th>
+       <th>Reader Score 2</th>
+       <th>Reader Score Total</th>
+       <th>Total Combined Score</th>
+    </tr>
+    <% @scores.each do |score| %>
+    <tr>
+        <td> <%= score.last_name %> </td>
+        <td> <%= score.first_name %> </td>
+        <td> <%= interview_score_one(score) %> </td>
+        <td> <%= interview_score_two(score) %> </td>
+        <td> <%= interview_score_total(score) %> </td>
+        <td> <%= reader_score_one(score) %> </td>
+        <td> <%= reader_score_two(score) %> </td>
+        <td> <%= reader_score_total(score) %> </td>
+        <td> <%= combined_score(score) %> </td>
+    </tr>
+	<% end %>
+	</table>

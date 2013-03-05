@@ -255,4 +255,65 @@ module UsersHelper
 		end
 	end
 
+	def interview_score_one(user)
+		@app = App.find_by_user_id(user.id)
+		@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+		@first = @interview_evaluations.first
+		@first.q1 unless @first.nil?
+	end
+
+
+	def interview_score_two(user)
+		@app = App.find_by_user_id(user.id)
+		@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+		@second = @interview_evaluations.last
+		@second.q1 unless @second.nil?
+	end
+
+	def interview_score_total(user)
+		@app = App.find_by_user_id(user.id)
+		@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+		@first = @interview_evaluations.first.q1 unless @first.nil?
+		@second = @interview_evaluations.last.q1 unless @second.nil?
+		@first.to_i + @second.to_i
+	end
+
+	def reader_score_one(user)
+		@app = App.find_by_user_id(user.id)
+		@committee_member_evaluations = CommitteeMemberEvaluation.find_all_by_app_id(@app)
+		@first = @committee_member_evaluations.first
+		@first.q7 unless @first.nil?
+	end
+
+	def reader_score_two(user)
+		@app = App.find_by_user_id(user.id)
+		@committee_member_evaluations = CommitteeMemberEvaluation.find_all_by_app_id(@app)
+		@second = @committee_member_evaluations.last
+		@second.q7 unless @second.nil?
+	end
+
+	def reader_score_total(user)
+		@app = App.find_by_user_id(user.id)
+		@committee_member_evaluations = CommitteeMemberEvaluation.find_all_by_app_id(@app)
+		@first = @committee_member_evaluations.first.q7 unless @first.nil?
+		@second = @committee_member_evaluations.last.q7 unless @second.nil?
+		@first.to_i + @second.to_i
+	end
+
+	def combined_score(user)
+		@app = App.find_by_user_id(user.id)
+		@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+		@first = @interview_evaluations.first
+		@second = @interview_evaluations.last
+		@first = @interview_evaluations.first.q1 unless @first.nil?
+		@second = @interview_evaluations.last.q1 unless @second.nil?
+		@committee_member_evaluations = CommitteeMemberEvaluation.find_all_by_app_id(@app)
+		@first_reader = @committee_member_evaluations.first.q7 unless @first.nil?
+		@second_reader = @committee_member_evaluations.last.q7 unless @second.nil?
+		if interview_score_total(user) == 0
+			" "
+		else
+		@first.to_i + @second.to_i + @first_reader.to_i + @second_reader.to_i
+		end
+	end
 end

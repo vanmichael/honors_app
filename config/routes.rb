@@ -6,6 +6,9 @@ HonorsApp::Application.routes.draw do
     collection do
       get :new_faculty_user
       get :new_committee_user
+      get :interview_score_index
+      get :reader_score_index
+      get :combined_score_index
     end
   end
     

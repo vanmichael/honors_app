@@ -10,6 +10,18 @@ class UsersController < ApplicationController
     @committee_members = User.paginate(:conditions => {:user_type => 3}, :page => params[:page], :order => 'created_at desc')
   end
 
+  def interview_score_index
+     @scores = User.paginate(:conditions => {:user_type => 1}, :page => params[:page], :per_page => 200, :order => 'last_name ASC')
+  end
+
+  def reader_score_index
+
+  end
+
+  def combined_score_index
+
+  end
+
   def new
     @user = User.new
   end

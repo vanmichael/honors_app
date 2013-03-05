@@ -3,6 +3,7 @@ class App < ActiveRecord::Base
 
 	belongs_to :user
 	has_many :committee_member_evaluations
+	has_many :interview_evaluations
 
 	validates :agree, presence: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

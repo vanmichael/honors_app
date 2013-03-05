@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :facultyrecs
   has_many :apps
   has_many :committee_member_evaluations
+  has_many :interview_evaluations
   
   has_secure_password #Rails 3 helper method to require/encrpypt password and password confirmation using password digest
 
