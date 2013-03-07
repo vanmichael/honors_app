@@ -329,7 +329,7 @@ module UsersHelper
 		@app = App.find_by_user_id(user.id)
 		@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
 		@second = @interview_evaluations.last
-		@interviewer = User.find_by_id(@first.user_id) unless @second.nil?
+		@interviewer = User.find_by_id(@second.user_id) unless @second.nil?
 		@interviewer.last_name 
 	end
 
@@ -345,7 +345,7 @@ module UsersHelper
 		@app = App.find_by_user_id(user.id)
 		@committee_member_evaluations = CommitteeMemberEvaluation.find_all_by_app_id(@app)
 		@second = @committee_member_evaluations.last
-		@reader = User.find_by_id(@first.user_id) unless @second.nil?
+		@reader = User.find_by_id(@second.user_id) unless @second.nil?
 		@reader.last_name
 	end
 end
