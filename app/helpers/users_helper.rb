@@ -348,4 +348,9 @@ module UsersHelper
 		@reader = User.find_by_id(@second.user_id) unless @second.nil?
 		@reader.last_name
 	end
+
+	def mailbox(user)
+		@app = App.find_by_user_id(user.id)
+		@app.boxnumber
+	end
 end

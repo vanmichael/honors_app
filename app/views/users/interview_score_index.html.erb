@@ -2,33 +2,37 @@
 <h3>Total Applicants: <%= @scores.count %></h3>
 	<table class="table table-bordered">
 	<tr>
+       <th>M-B#</th>
+       <th style="width:190px;">Email:</th>    
        <th style="width:100px;">Last Name:</th>
        <th style="width:100px;">First Name:</th>
        <th>I-S-1</th>
-       <th style="width:100px;">Iname1</th>
+       <!--<th style="width:100px;">Iname1</th> -->
        <th>I-S-2</th>
-       <th style="width:100px;">Iname2</th>
+        <!-- <th style="width:100px;">Iname2</th> -->
        <th>I-S-T</th>
        <th>R-S-1</th>
-       <th style="width:100px;">Rname1</th>
+        <!-- <th style="width:100px;">Rname1</th> -->
        <th>R-S-2</th>
-       <th style="width:100px;">Rname2</th>
+        <!-- <th style="width:100px;">Rname2</th> -->
        <th>R-S-T</th>
        <th>C-S</th>
     </tr>
     <% @scores.each do |score| %>
     <tr>
+        <td> <%= mailbox(score) %> </td>
+        <td> <%= score.email %> </td>
         <td> <%= score.last_name %> </td>
         <td> <%= score.first_name %> </td>
         <td> <%= interview_score_one(score) %> </td>
-        <td> <%= interviewer_one(score) %> </td>
+         <!-- <td> <%= interviewer_one(score) %> </td> -->
         <td> <%= interview_score_two(score) %> </td>
-        <td> <%= interviewer_two(score) %></td>
+         <!-- <td> <%= interviewer_two(score) %></td> -->
         <td> <%= interview_score_total(score) %> </td>
         <td> <%= reader_score_one(score) %> </td>
-        <td> <%= reader_one(score) %> </td>
+         <!-- <td> <%= reader_one(score) %> </td> -->
         <td> <%= reader_score_two(score) %> </td>
-        <td> <%= reader_two(score) %> </td>
+         <!-- <td> <%= reader_two(score) %> </td> -->
         <td> <%= reader_score_total(score) %> </td>
         <td> <%= combined_score(score) %> </td>
     </tr>
