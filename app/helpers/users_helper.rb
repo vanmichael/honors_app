@@ -316,4 +316,36 @@ module UsersHelper
 		@first.to_i + @second.to_i + @first_reader.to_i + @second_reader.to_i
 		end
 	end
+
+	def interviewer_one(user)
+		@app = App.find_by_user_id(user.id)
+		@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+		@first = @interview_evaluations.first
+		@interviewer = User.find_by_id(@first.user_id) unless @first.nil?
+		@interviewer.last_name 
+	end
+
+	def interviewer_two(user)
+		@app = App.find_by_user_id(user.id)
+		@interview_evaluations = InterviewEvaluation.find_all_by_app_id(@app)
+		@second = @interview_evaluations.last
+		@interviewer = User.find_by_id(@first.user_id) unless @second.nil?
+		@interviewer.last_name 
+	end
+
+	def reader_one(user)
+		@app = App.find_by_user_id(user.id)
+		@committee_member_evaluations = CommitteeMemberEvaluation.find_all_by_app_id(@app)
+		@first = @committee_member_evaluations.first
+		@reader = User.find_by_id(@first.user_id) unless @first.nil?
+		@reader.last_name
+	end
+
+	def reader_two(user)
+		@app = App.find_by_user_id(user.id)
+		@committee_member_evaluations = CommitteeMemberEvaluation.find_all_by_app_id(@app)
+		@second = @committee_member_evaluations.last
+		@reader = User.find_by_id(@first.user_id) unless @second.nil?
+		@reader.last_name
+	end
 end
